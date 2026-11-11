@@ -3188,26 +3188,25 @@
     </div>
 
     <div class="card">
+      <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text-dark); margin: 0 0 20px 0;">🌿 나의 환경 가치 선언문</h3>
       <div class="declare-form">
         <div class="declare-field">
-          <label>✏️ 이름</label>
-          <input type="text" id="declName" placeholder="이름을 입력하세요" maxlength="10">
+          <label>✏️ 이름 (또는 번호·별칭)</label>
+          <input type="text" id="declName" placeholder="이름 (또는 번호·별칭)을 입력하세요" maxlength="20">
         </div>
         <div class="declare-field">
-          <label>🌿 나는 자연이
-            <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
-            하더라도 소중하다고 생각한다.</label>
-          <input type="text" id="declBlank1" placeholder="예: 인간에게 직접적인 이익을 주지 않더라도">
+          <label>🌿 1. 오늘 내가 중요하게 생각한 자연의 가치는
+            <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>이다.</label>
+          <input type="text" id="declBlank1" placeholder="예: 다양한 생물이 함께 살아가는 공간이라는 점">
         </div>
         <div class="declare-field">
-          <label>💚 자연과 함께 살아가기 위해 내가 실천할 행동은
-            <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>
-            이다.</label>
-          <input type="text" id="declBlank2" placeholder="예: 나무가 있는 길을 걸으며 자연에 감사하는 것">
+          <label>💚 2. 사람과 자연이 함께 살아가기 위해 내가 실천할 행동 한 가지는
+            <u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>이다.</label>
+          <input type="text" id="declBlank2" placeholder="예: 학교 주변의 나무와 화단을 훼손하지 않고 보호하는 것">
         </div>
         <div class="declare-field">
-          <label>🌸 오늘 수업에서 느낀 점을 자유롭게 적어주세요 (선택)</label>
-          <textarea id="declFreetext" rows="3" placeholder="예: 자연도 나처럼 살아있는 존재라는 것을 다시 생각하게 되었다..."></textarea>
+          <label>🌸 3. 오늘 친구들의 의견을 듣고 새롭게 생각한 점을 적어보세요. (선택)</label>
+          <textarea id="declFreetext" rows="3" placeholder="예: 나무를 보호하는 것뿐 아니라 도로를 이용하는 사람들의 안전도 중요하다는 것을 알게 되었다."></textarea>
         </div>
         <button class="declare-preview-btn" onclick="previewCard()">
           🎨 선언문 카드 만들기
@@ -3243,13 +3242,13 @@
   <div class="declare-card-overlay" id="cardOverlay" onclick="closeCardOverlay(event)">
     <div class="declare-card-wrap">
       <div class="declare-card" id="declareCard">
-        <div class="card-top-label">🌸 환경 가치 선언문</div>
+        <div class="card-top-label">🌿 나의 환경 가치 선언문</div>
         <div class="card-title">나무를 위해 조금 불편해도<br>괜찮을까?</div>
         <div class="card-sentence">
-          나는 자연이 <span class="blank-filled" id="cardBlank1"></span> 하더라도<br>소중하다고 생각한다.
+          오늘 내가 중요하게 생각한 자연의 가치는<br><span class="blank-filled" id="cardBlank1"></span> 이다.
         </div>
         <div class="card-sentence">
-          자연과 함께 살아가기 위해<br>내가 실천할 행동은<br><span class="blank-filled" id="cardBlank2"></span> 이다.
+          사람과 자연이 함께 살아가기 위해<br>내가 실천할 행동 한 가지는<br><span class="blank-filled" id="cardBlank2"></span> 이다.
         </div>
         <div class="card-sentence" id="cardFreeWrap"
           style="display:none; margin-top: 16px; font-size: 0.9rem; color: var(--text-gray); font-style: italic;">
@@ -5399,10 +5398,10 @@
             <span style="font-size:0.75rem; color:#888;">${dtStr}</span>
           </div>
           <div style="font-size:0.83rem; color:#333; line-height:1.5; margin-bottom:6px;">
-            <div><strong>자연의 소중함:</strong> "...${escapeHtml(d.blank1 || '')} 하더라도 소중하다"</div>
-            <div style="margin-top:4px;"><strong>실천 다짐:</strong> "...${escapeHtml(d.blank2 || '')}"</div>
+            <div><strong>1. 자연의 가치:</strong> "오늘 내가 중요하게 생각한 자연의 가치는 ${escapeHtml(d.blank1 || '')}이다."</div>
+            <div style="margin-top:4px;"><strong>2. 실천할 행동:</strong> "사람과 자연이 함께 살아가기 위해 내가 실천할 행동 한 가지는 ${escapeHtml(d.blank2 || '')}이다."</div>
           </div>
-          ${d.freetext ? `<div style="font-size:0.78rem; color:#666; background:#FFF8E1; padding:6px 8px; border-radius:8px; margin-top:6px; font-style:italic;">💬 "${escapeHtml(d.freetext)}"</div>` : ''}
+          ${d.freetext ? `<div style="font-size:0.78rem; color:#666; background:#FFF8E1; padding:6px 8px; border-radius:8px; margin-top:6px; font-style:italic;">🌸 "${escapeHtml(d.freetext)}"</div>` : ''}
         `;
         container.appendChild(card);
       });
@@ -5489,10 +5488,10 @@
         <div style="background:#FAFAFA; border:1.5px solid #FFCDD2; border-radius:12px; padding:14px; margin-bottom:10px; page-break-inside:avoid;">
           <div style="font-weight:700; color:#C2185B; margin-bottom:6px;">🌿 ${escapeHtml(d.name || '학생')}의 선언문</div>
           <div style="font-size:0.9rem; line-height:1.6; color:#333;">
-            - 자연의 소중함: <em>"${escapeHtml(d.blank1 || '')}" 하더라도 소중하다.</em><br>
-            - 나의 실천 행동: <em>"${escapeHtml(d.blank2 || '')}"</em>
+            - 오늘 내가 중요하게 생각한 자연의 가치: <em>"${escapeHtml(d.blank1 || '')}"이다.</em><br>
+            - 사람과 자연이 함께 살아가기 위해 실천할 행동 한 가지: <em>"${escapeHtml(d.blank2 || '')}"이다.</em>
           </div>
-          ${d.freetext ? `<div style="font-size:0.85rem; color:#666; margin-top:6px; background:#FFF; padding:6px 10px; border-radius:6px; border:1px solid #EEE;">💬 "${escapeHtml(d.freetext)}"</div>` : ''}
+          ${d.freetext ? `<div style="font-size:0.85rem; color:#666; margin-top:6px; background:#FFF; padding:6px 10px; border-radius:6px; border:1px solid #EEE;">🌸 새롭게 생각한 점: "${escapeHtml(d.freetext)}"</div>` : ''}
         </div>
       `).join('') || '<p style="color:#888;">등록된 선언문이 없습니다.</p>';
 
@@ -5624,7 +5623,7 @@
 
       // 4. 활동 4 선언문
       csv += `[활동 4 : 환경 가치 선언문]\n`;
-      csv += `학생명,소중한 이유(빈칸1),실천 다짐(빈칸2),오늘의 소감(선택),작성시간\n`;
+      csv += `학생명,자연의 가치(빈칸1),실천할 행동 한 가지(빈칸2),새롭게 생각한 점(선택),작성시간\n`;
       (localDeclarations || []).forEach(d => {
         const tStr = d.ts ? new Date(d.ts).toLocaleString() : '';
         const b1 = (d.blank1 || '').replace(/"/g, '""');
