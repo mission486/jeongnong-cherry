@@ -2625,7 +2625,7 @@
           <div class="card-step-badge">1단계</div>
           <div class="icon">⚖️</div>
           <h3>활동 1 · 환경 딜레마, 나의 선택은?</h3>
-          <p>제주와 생활 속 대표 환경 딜레마 3가지!<br>나의 선택과 이유를 통해 두 관점을 알아봐요</p>
+          <p>제주와 생활 속 환경 딜레마 5가지!<br>나의 선택을 통해 두 관점을 알아봐요</p>
           <div class="card-action-hint">바로 참여하기 →</div>
         </div>
         <div class="intro-card card-vote" onclick="goSection('vote')">
@@ -2811,7 +2811,7 @@
     <div class="section-title">
       <span class="emoji">⚖️</span>
       <h2>활동 1 · 환경 딜레마, 여러분의 선택은?</h2>
-      <p>생활 속 환경 딜레마 3가지 사례를 살펴보고, 내가 중요하게 생각하는 가치와 선택의 이유를 알아봐요!</p>
+      <p>생활 속 환경 딜레마 5가지 사례를 살펴보고, 내가 중요하게 생각하는 가치를 알아봐요!</p>
     </div>
 
     <div class="dilemma-container">
@@ -2819,14 +2819,14 @@
       <div class="dilemma-header-card">
         <div class="dilemma-progress-box">
           <div class="dilemma-progress-info" style="justify-content: flex-end;">
-            <span id="dilemmaStepText">1 / 3</span>
+            <span id="dilemmaStepText">1 / 5</span>
           </div>
           <div class="dilemma-progress-track">
-            <div class="dilemma-progress-fill" id="dilemmaProgressFill" style="width: 33.3%;"></div>
+            <div class="dilemma-progress-fill" id="dilemmaProgressFill" style="width: 20%;"></div>
           </div>
         </div>
         <div style="font-size: 0.85rem; color: var(--text-gray); font-weight: 600;">
-          💡 정답이 없어요! 무엇을 선택했는지보다 <strong>‘왜 그렇게 선택했는지’</strong>를 떠올려 보세요.
+          💡 정답이 없어요! 내가 더 중요하게 생각하는 입장을 자유롭게 선택해 보세요.
         </div>
       </div>
 
@@ -2872,28 +2872,12 @@
           </button>
         </div>
 
-        <!-- 선택 이유(근거) 확인 영역 -->
-        <div class="dilemma-reason-wrap" id="dilemmaReasonWrap">
-          <div style="font-size: 0.95rem; font-weight: 800; color: var(--cherry-deep); margin-bottom: 8px;">
-            ✍️ 그렇게 선택한 이유는 무엇인가요? (내가 중요하게 생각한 가치)
-          </div>
-          <p style="font-size: 0.82rem; color: #666; margin: 0 0 10px 0;">
-            아래 예시 이유를 클릭하거나 나의 생각을 한 줄로 적어보세요.
-          </p>
-          <div class="dilemma-reason-chips" id="dilemmaReasonChips">
-            <!-- JS 동적 생성 -->
-          </div>
-          <input type="text" class="dilemma-reason-input" id="dilemmaReasonInput"
-            placeholder="왜 그렇게 선택했는지 내가 중요하게 생각한 이유를 적어보세요 (선택 또는 직접 입력)"
-            oninput="saveCurrentDilemmaReason(this.value)">
-        </div>
-
         <div class="dilemma-nav-controls">
           <button class="dilemma-prev-btn" id="dilemmaPrevBtn" onclick="prevDilemma()" style="visibility: hidden;">
             ← 이전 사례
           </button>
           <span style="font-size: 0.82rem; color: var(--text-gray);" id="dilemmaCurrentChoiceHint">
-            입장을 선택한 뒤 이유를 확인하고 다음 사례로 이동하세요
+            두 입장 중 하나를 선택한 뒤 다음 사례로 이동하세요
           </span>
           <button class="dilemma-next-btn" id="dilemmaNextBtn" onclick="nextDilemmaStep()">
             다음 사례로 이동 ➡️
@@ -2901,18 +2885,17 @@
         </div>
       </div>
 
-      <!-- 딜레마 3가지 완료 후: 내 선택 돌아보기 + 우리 반 결과 + 생각 질문 + 두 관점 비교 -->
+      <!-- 딜레마 5가지 완료 후: 내 선택 돌아보기 -->
       <div class="dilemma-result-container" id="dilemmaResultBox">
         <div class="dilemma-result-card" style="padding: 32px 26px;">
           <div class="dilemma-result-badge">🧭 환경 문제와 나의 가치 탐색 완료</div>
-          <h2 class="dilemma-result-title" style="font-size: 1.5rem;">내가 선택한 입장과 중요하게 생각한 이유</h2>
+          <h2 class="dilemma-result-title" style="font-size: 1.5rem;">내가 선택한 5가지 환경 딜레마 입장</h2>
           <p class="dilemma-result-desc" style="margin-bottom: 20px; font-size: 0.93rem;">
-            환경 갈등 상황에서 관점을 결정하는 것은 <strong>‘무엇을 선택했는가’</strong>보다 <strong>‘왜 그렇게 선택했는가(선택의 근거)’</strong>입니다.<br>
-            내가 3가지 사례에서 중요하게 생각한 가치를 확인해 보세요!
+            생활 속 5가지 환경 딜레마 사례에서 내가 선택한 입장을 확인해 보세요!
           </p>
 
           <div class="dilemma-answers-list show" id="dilemmaAnswersList" style="margin-bottom: 20px;">
-            <!-- 3가지 대표 사례 선택 및 이유 요약 -->
+            <!-- 5가지 사례 선택 요약 -->
           </div>
 
           <div class="dilemma-action-buttons" style="margin-top: 10px;">
@@ -2943,8 +2926,10 @@
             <span style="font-size:0.8rem; color:#666; font-weight:700;">사례 선택:</span>
             <select id="dilemmaCaseFilter" onchange="onChangeDilemmaCaseFilter(this.value)" style="padding:5px 10px; border-radius:8px; border:1.5px solid #CCC; font-family:'Noto Sans KR',sans-serif; font-size:0.83rem; font-weight:700;">
               <option value="1">① 전농로 벚꽃거리 도로 확장</option>
-              <option value="2">② 곶자왈 관광단지 개발</option>
-              <option value="3">③ 가로수 가지치기</option>
+              <option value="2">② 도심 속 습지·논의 아파트 개발</option>
+              <option value="3">③ 가로수 가지치기 논란</option>
+              <option value="4">④ 곶자왈 관광단지 개발</option>
+              <option value="5">⑤ 철새도래지 주변 신도시·도로 건설</option>
               <option value="all">전체 사례 평균</option>
             </select>
           </div>
@@ -2998,7 +2983,7 @@
           </div>
         </div>
         <p style="font-size: 0.85rem; color: var(--text-gray); margin: 0;">
-          학생들의 대표 3대 환경 딜레마 선택 결과 및 작성한 이유 데이터를 관리합니다.
+          학생들의 5가지 환경 딜레마 선택 결과 데이터를 관리합니다.
         </p>
       </div>
     </div>
@@ -3355,7 +3340,7 @@
     let classCodes = {}; // 학급별 보안 입장 코드 { "1반": "A7B2", ... }
     let localDeclarations = [];
 
-    // ==================== [활동 1] 환경·생태 딜레마 데이터 (대표 3선 + 추가 탐구 7선) ====================
+    // ==================== [활동 1] 환경·생태 딜레마 데이터 (5선) ====================
     const dilemmaList = [
       {
         id: 1,
@@ -3369,86 +3354,19 @@
           type: "dev",
           label: "도로 확장 (인간의 편리함·안전)",
           desc: "🚗 도로를 넓혀 차량 통행 불편을 줄이고 보행자 안전을 확보한다.",
-          icon: "🚗",
-          reasons: [
-            "보행자와 운전자의 안전이 무엇보다 중요해서",
-            "매일 도로를 이용하는 주민들의 생활 불편을 줄이기 위해"
-          ]
+          icon: "🚗"
         },
         optB: {
           type: "eco",
           label: "나무 보호 (자연·생태 보존)",
           desc: "🌸 오랜 세월 자리를 지켜온 벚꽃나무를 보존하고 우회로 등 다른 방법을 찾는다.",
-          icon: "🌸",
-          reasons: [
-            "오랜 세월 살아온 나무의 생명 자체도 소중하기 때문에",
-            "한번 베어낸 오래된 벚꽃나무는 다시 되돌릴 수 없어서",
-            "아름다운 벚꽃거리가 지역 관광과 마을의 자랑이기 때문에"
-          ]
+          icon: "🌸"
         }
       },
       {
         id: 2,
         isCore: true,
-        flow: "② 사람과 숲(생태계)의 관계",
-        title: "곶자왈 관광단지 개발",
-        tag: "#제주곶자왈 #관광개발vs생태계가치",
-        icon: "🌿",
-        situation: "지역 경제 활성화와 관광객 유치를 위해 ‘제주의 허파’라 불리는 원시림(곶자왈) 일부에 관광단지를 짓고자 합니다. 관광 개발의 경제적 가치와 숲의 생태적 가치를 비교해 봅시다.",
-        optA: {
-          type: "dev",
-          label: "관광단지 개발 (경제적 가치)",
-          desc: "⛳ 일자리 창출과 지역 경제 활성화를 위해 관광 개발이 필요하다.",
-          icon: "⛳",
-          reasons: [
-            "지역 주민들의 일자리와 경제적 소득이 늘어나기 때문에",
-            "더 많은 사람들이 제주의 자연을 방문하고 즐길 수 있어서"
-          ]
-        },
-        optB: {
-          type: "eco",
-          label: "곶자왈 원형 보존 (생태적 가치)",
-          desc: "🌿 지하수 함양과 다양한 동식물의 서식지인 숲 생태계를 그대로 보호한다.",
-          icon: "🌿",
-          reasons: [
-            "다양한 동식물이 함께 살아가는 생태계 전체의 가치가 중요해서",
-            "제주의 지하수와 공기를 지켜주는 원시림은 파괴되면 복구할 수 없어서"
-          ]
-        }
-      },
-      {
-        id: 3,
-        isCore: true,
-        flow: "③ 인간의 필요와 생태적 영향",
-        title: "가로수 가지치기",
-        tag: "#도시가로수 #사람의안전vs나무생육",
-        icon: "✂️",
-        situation: "태풍 때 나뭇가지가 부러져 전깃줄에 닿거나 상가 간판을 가린다는 이유로 가로수 가지를 대폭 잘라내려고 합니다. 사람의 안전·편의와 나무의 생육 및 주변 생물의 서식 환경을 비교해 봅시다.",
-        optA: {
-          type: "dev",
-          label: "가지 대폭 자르기 (안전·편의)",
-          desc: "✂️ 태풍 피해와 안전사고를 예방하고 상가 불편을 줄이기 위해 가지를 대폭 자른다.",
-          icon: "✂️",
-          reasons: [
-            "태풍 시 전선 단선이나 보행자 안전사고를 막는 것이 우선이라서",
-            "상가 간판 가림 등 시민들의 생활 민원을 해결해야 해서"
-          ]
-        },
-        optB: {
-          type: "eco",
-          label: "자연스러운 수형 유지 (생육·서식환경)",
-          desc: "🌳 나무의 건강한 생육과 새·곤충들의 서식 환경, 여름철 그늘을 위해 최소한만 다듬는다.",
-          icon: "🌳",
-          reasons: [
-            "지나친 가지치기는 나무를 병들게 하고 새·곤충의 보금자리를 빼앗아서",
-            "나무가 건강하게 자라야 사람에게도 시원한 그늘과 맑은 공기를 주기 때문에"
-          ]
-        }
-      },
-      {
-        id: 4,
-        isCore: false,
-        flow: "추가 탐구 · 주거와 생태",
+        flow: "② 주거와 생태계의 관계",
         title: "도심 속 습지·논의 아파트 개발",
         tag: "#맹꽁이서식지 #주택공급",
         icon: "🐸",
@@ -3457,91 +3375,62 @@
           type: "dev",
           label: "아파트 개발",
           desc: "🏢 무주택 시민의 주거 안정이 더 시급하므로 개발한다.",
-          icon: "🏢",
-          reasons: ["사람이 살 집을 마련하는 주거 안정이 시급해서"]
+          icon: "🏢"
         },
         optB: {
           type: "eco",
           label: "습지 보존",
           desc: "🐸 멸종위기 동물과 자연 습지를 보존하기 위해 개발을 중단한다.",
-          icon: "🐸",
-          reasons: ["멸종위기 생물의 마지막 서식지를 지켜야 해서"]
+          icon: "🐸"
+        }
+      },
+      {
+        id: 3,
+        isCore: true,
+        flow: "③ 인간의 필요와 생태적 영향",
+        title: "가로수 가지치기 논란",
+        tag: "#도시가로수 #사람의안전vs나무생육",
+        icon: "✂️",
+        situation: "태풍 때 나뭇가지가 부러져 전깃줄에 닿거나 상가 간판을 가린다는 이유로 가로수 가지를 대폭 잘라내려고 합니다. 사람의 안전·편의와 나무의 생육 및 주변 생물의 서식 환경을 비교해 봅시다.",
+        optA: {
+          type: "dev",
+          label: "가지 대폭 자르기 (안전·편의)",
+          desc: "✂️ 태풍 피해와 안전사고를 예방하고 상가 불편을 줄이기 위해 가지를 대폭 자른다.",
+          icon: "✂️"
+        },
+        optB: {
+          type: "eco",
+          label: "자연스러운 수형 유지 (생육·서식환경)",
+          desc: "🌳 나무의 건강한 생육과 새·곤충들의 서식 환경, 여름철 그늘을 위해 최소한만 다듬는다.",
+          icon: "🌳"
+        }
+      },
+      {
+        id: 4,
+        isCore: true,
+        flow: "④ 사람과 숲(생태계)의 관계",
+        title: "곶자왈 관광단지 개발",
+        tag: "#제주곶자왈 #관광개발vs생태계가치",
+        icon: "🌿",
+        situation: "지역 경제 활성화와 관광객 유치를 위해 ‘제주의 허파’라 불리는 원시림(곶자왈) 일부에 관광단지를 짓고자 합니다. 관광 개발의 경제적 가치와 숲의 생태적 가치를 비교해 봅시다.",
+        optA: {
+          type: "dev",
+          label: "관광단지 개발 (경제적 가치)",
+          desc: "⛳ 일자리 창출과 지역 경제 활성화를 위해 관광 개발이 필요하다.",
+          icon: "⛳"
+        },
+        optB: {
+          type: "eco",
+          label: "곶자왈 원형 보존 (생태적 가치)",
+          desc: "🌿 지하수 함양과 다양한 동식물의 서식지인 숲 생태계를 그대로 보호한다.",
+          icon: "🌿"
         }
       },
       {
         id: 5,
-        isCore: false,
-        flow: "추가 탐구 · 여가와 보존",
-        title: "국립공원 케이블카(탐방로) 설치",
-        tag: "#설악산 #국립공원케이블카",
-        icon: "🚡",
-        situation: "몸이 불편한 교통약자나 관광객이 설악산이나 지리산 같은 명산을 쉽게 즐길 수 있도록 케이블카를 추가 설치하자고 합니다.",
-        optA: {
-          type: "dev",
-          label: "케이블카 설치",
-          desc: "🚡 모두가 평등하게 자연을 누릴 수 있도록 관광 편의 시설을 늘린다.",
-          icon: "🚡",
-          reasons: ["교통약자의 이동권과 관광 활성화를 위해"]
-        },
-        optB: {
-          type: "eco",
-          label: "자연 원형 보존",
-          desc: "🏔️ 야생동물의 서식지가 끊기므로 자연 그대로 보호해야 한다.",
-          icon: "🏔️",
-          reasons: ["국립공원의 야생동물 서식지와 자연 원형을 지키기 위해"]
-        }
-      },
-      {
-        id: 6,
-        isCore: false,
-        flow: "추가 탐구 · 도시 공간과 하천",
-        title: "도심 하천 콘크리트 복개 vs 복원",
-        tag: "#도심하천 #주차난해결",
-        icon: "🦦",
-        situation: "도심 속 만성적인 주차난을 해소하기 위해 자연하천을 복개해 주차장을 만들자는 의견과, 물길을 되살려 수달과 철새가 돌아오게 하자는 의견이 있습니다.",
-        optA: {
-          type: "dev",
-          label: "하천 복개 주차장",
-          desc: "🅿️ 주민들의 당장 시급한 주차 공간 확보가 우선이다.",
-          icon: "🅿️",
-          reasons: ["주민들의 심각한 주차 불편을 해결하기 위해"]
-        },
-        optB: {
-          type: "eco",
-          label: "생태하천 복원",
-          desc: "🦦 하천 생태계를 되살려 자연과 공존하는 공간으로 만든다.",
-          icon: "🦦",
-          reasons: ["하천 생태계를 복원해 수달과 철새가 살 수 있게 하려고"]
-        }
-      },
-      {
-        id: 7,
-        isCore: false,
-        flow: "추가 탐구 · 도시 동물과의 공존",
-        title: "길고양이 급식소 및 개체수 관리",
-        tag: "#길고양이 #공존과위생",
-        icon: "🐱",
-        situation: "주택가 길고양이들 때문에 소음과 쓰레기봉투 훼손 등 주민 불편이 커지자, 도심 내 급식소를 철거하고 개체수를 강력히 통제해야 한다는 목소리가 나옵니다.",
-        optA: {
-          type: "dev",
-          label: "급식소 철거 및 통제",
-          desc: "🧹 인간의 거주 환경과 위생, 소음 피해 방지가 최우선이다.",
-          icon: "🧹",
-          reasons: ["주민들의 쾌적한 생활 환경과 위생을 위해"]
-        },
-        optB: {
-          type: "eco",
-          label: "TNR 및 급식소 유지",
-          desc: "🐱 동물 복지와 공존을 위해 TNR(중성화) 및 공공 급식소를 유지한다.",
-          icon: "🐱",
-          reasons: ["도시 속 생명체와 평화롭게 공존하기 위해"]
-        }
-      },
-      {
-        id: 8,
-        isCore: false,
-        flow: "추가 탐구 · 교통망과 철새 서식지",
-        title: "철새도래지 근처 대규모 신도시·도로 건설",
+        isCore: true,
+        flow: "⑤ 교통망과 철새 서식지",
+        title: "철새도래지 주변 신도시·도로 건설",
         tag: "#철새도래지 #고속도로건설",
         icon: "🦆",
         situation: "철새들이 찾아오는 유명 습지 인근을 통과하는 고속도로와 신도시를 건설하면 교통이 매우 편리해지지만, 철새들의 이동에 큰 타격을 줍니다.",
@@ -3549,77 +3438,25 @@
           type: "dev",
           label: "직선 도로 건설",
           desc: "🛣️ 지역 경제 발전과 교통 체증 해소를 위해 개발이 필수적이다.",
-          icon: "🛣️",
-          reasons: ["이동 시간 단축과 물류·교통 효율성을 위해"]
+          icon: "🛣️"
         },
         optB: {
           type: "eco",
           label: "노선 우회 및 보존",
           desc: "🦆 철새와 생태계의 낙원을 지키기 위해 노선을 우회해야 한다.",
-          icon: "🦆",
-          reasons: ["철새들의 생존과 습지 생태계를 보호하기 위해"]
-        }
-      },
-      {
-        id: 9,
-        isCore: false,
-        flow: "추가 탐구 · 친환경 에너지와 산림",
-        title: "신재생에너지(태양광·풍력)를 위한 산림 훼손",
-        tag: "#기후위기 #태양광풍력",
-        icon: "☀️",
-        situation: "탄소중립과 기후위기 대응을 위해 친환경 에너지가 필요하지만, 산간 지역의 나무를 베어내고 넓은 태양광 패널이나 풍력 발전기를 설치해야 합니다.",
-        optA: {
-          type: "dev",
-          label: "발전 시설 확충",
-          desc: "☀️ 지구 온난화를 막는 친환경 에너지 발전 시설 확충이 더 급하다.",
-          icon: "☀️",
-          reasons: ["화석연료를 줄이고 기후위기에 대응하기 위해"]
-        },
-        optB: {
-          type: "eco",
-          label: "산림 훼손 반대",
-          desc: "🌲 발전소를 짓느라 산림과 야생동물 서식지를 파괴하는 것은 모순이다.",
-          icon: "🌲",
-          reasons: ["산림 생태계와 야생동물 서식지를 훼손하지 않기 위해"]
-        }
-      },
-      {
-        id: 10,
-        isCore: false,
-        flow: "추가 탐구 · 야간 관광과 빛공해",
-        title: "람사르 습지 인근 야간 관광지 개발 (빛공해)",
-        tag: "#야간관광 #빛공해생태계",
-        icon: "🦉",
-        situation: "지역 관광 수입을 올리기 위해 생태 습지 주변에 화려한 야간 조명과 산책로를 만들어 관광객을 유치하려고 합니다.",
-        optA: {
-          type: "dev",
-          label: "야간 관광 개발",
-          desc: "💡 지역 상권 활성화와 시민들의 여가 문화를 위해 개발해야 한다.",
-          icon: "💡",
-          reasons: ["지역 상권 활성화와 볼거리 제공을 위해"]
-        },
-        optB: {
-          type: "eco",
-          label: "빛공해 차단·보호",
-          desc: "🦉 야간 조명과 소음으로 밤에 쉬어야 할 야생동물이 피해를 입으므로 제한해야 한다.",
-          icon: "🦉",
-          reasons: ["야행성 동물과 습지 생물들의 생체 리듬을 보호하기 위해"]
+          icon: "🦆"
         }
       }
     ];
 
-    const coreDilemmaList = dilemmaList.slice(0, 3); // 수업용 대표 사례 3개
-    const extraDilemmaList = dilemmaList.slice(3);   // 추가 탐구 활동 보관용 7개
+    const coreDilemmaList = dilemmaList; // 5가지 환경 딜레마 사례
 
     // 활동 1 상태 변수
     let currentDilemmaIdx = 0;
-    let activeDilemmaPool = coreDilemmaList; // 기본은 대표 사례 3개
+    let activeDilemmaPool = coreDilemmaList; // 기본 5가지 사례
     let myDilemmaAnswers = {}; // { [qId]: 'dev' | 'eco' }
-    let myDilemmaReasons = {}; // { [qId]: '내가 선택한 이유' }
-    let localDilemmaClassMap = {}; // { [userId]: { answers: {1:'eco',2:'dev',3:'eco'}, reasons: {...}, name, ts } }
-    let dilemmaStatMode = 'live'; // 'live' | 'sim'
-    let dilemmaSelectedCase = '1'; // '1' | '2' | '3' | 'all'
-    let simVotes = { eco: 12, dev: 8 }; // 수업 발문용 예시 화면 기본값 (자연 보호 12명 : 인간의 편리함·안전 8명)
+    let localDilemmaClassMap = {}; // { [userId]: { answers: {...}, name, ts } }
+    let dilemmaSelectedCase = '1'; // '1' ~ '5' | 'all'
 
     // 활동 2 & 활동 3 상태 변수
     let localVotesMap = {}; // { [userId]: { choice: 'A', name: '이름', ts: 123 } }
@@ -4508,20 +4345,13 @@
       return id;
     }
 
-    // ==================== [활동 1] 환경 딜레마 대표 3선 & 관점 탐색 로직 ====================
+    // ==================== [활동 1] 환경 딜레마 10선 & 관점 탐색 로직 ====================
     function initDilemma() {
       const savedAns = localStorage.getItem('jeongnong_dilemma_my');
-      const savedRea = localStorage.getItem('jeongnong_dilemma_reasons_my');
       if (savedAns) {
         try {
           const data = JSON.parse(savedAns);
           if (data && typeof data === 'object') myDilemmaAnswers = data;
-        } catch (e) { }
-      }
-      if (savedRea) {
-        try {
-          const rData = JSON.parse(savedRea);
-          if (rData && typeof rData === 'object') myDilemmaReasons = rData;
         } catch (e) { }
       }
       activeDilemmaPool = coreDilemmaList;
@@ -4568,10 +4398,10 @@
         prevBtn.style.visibility = idx > 0 ? 'visible' : 'hidden';
       }
       if (nextBtn) {
-        nextBtn.textContent = idx < totalSteps - 1 ? '다음 사례로 이동 ➡️' : '선택 완료 · 결과 및 두 관점 보기 ➡️';
+        nextBtn.textContent = idx < totalSteps - 1 ? '다음 사례로 이동 ➡️' : '선택 완료 · 결과 보기 ➡️';
       }
 
-      // 기존 선택 및 이유 표시
+      // 기존 선택 표시
       const btnDev = document.getElementById('btnOptDev');
       const btnEco = document.getElementById('btnOptEco');
       if (btnDev) btnDev.classList.remove('selected');
@@ -4581,8 +4411,6 @@
       if (myChoice === 'dev' && btnDev) btnDev.classList.add('selected');
       if (myChoice === 'eco' && btnEco) btnEco.classList.add('selected');
 
-      renderDilemmaReasonBox(q, myChoice);
-
       // 질문 박스 보이고 결과 박스 숨기기
       const qBox = document.getElementById('dilemmaQuestionBox');
       const rBox = document.getElementById('dilemmaResultBox');
@@ -4590,61 +4418,10 @@
       if (rBox) rBox.classList.remove('show');
     }
 
-    function renderDilemmaReasonBox(q, choice) {
-      const wrap = document.getElementById('dilemmaReasonWrap');
-      const chipsEl = document.getElementById('dilemmaReasonChips');
-      const inputEl = document.getElementById('dilemmaReasonInput');
-      if (!wrap || !chipsEl || !inputEl) return;
-
-      if (!choice) {
-        wrap.classList.remove('show');
-        return;
-      }
-
-      wrap.classList.add('show');
-      const reasonsList = choice === 'eco' ? (q.optB.reasons || []) : (q.optA.reasons || []);
-      const savedReason = myDilemmaReasons[q.id] || '';
-      inputEl.value = savedReason;
-
-      chipsEl.innerHTML = reasonsList.map(rText => {
-        const isActive = savedReason === rText ? 'active' : '';
-        const safeAttr = escapeHtml(rText).replace(/'/g, '&#39;');
-        return `<button type="button" class="dilemma-reason-chip ${isActive}" onclick="selectDilemmaReasonChip('${safeAttr}')">💬 ${escapeHtml(rText)}</button>`;
-      }).join('');
-    }
-
-    function selectDilemmaReasonChip(reasonStr) {
-      const q = activeDilemmaPool[currentDilemmaIdx];
-      if (!q) return;
-      myDilemmaReasons[q.id] = reasonStr;
-      try {
-        localStorage.setItem('jeongnong_dilemma_reasons_my', JSON.stringify(myDilemmaReasons));
-      } catch (e) { }
-      renderDilemmaReasonBox(q, myDilemmaAnswers[q.id]);
-      saveMyDilemmaRecord();
-    }
-
-    function saveCurrentDilemmaReason(val) {
-      const q = activeDilemmaPool[currentDilemmaIdx];
-      if (!q) return;
-      myDilemmaReasons[q.id] = val.trim();
-      try {
-        localStorage.setItem('jeongnong_dilemma_reasons_my', JSON.stringify(myDilemmaReasons));
-      } catch (e) { }
-      saveMyDilemmaRecord();
-    }
-
     function chooseDilemma(choice) {
       const q = activeDilemmaPool[currentDilemmaIdx];
       if (!q) return;
-      const prevChoice = myDilemmaAnswers[q.id];
       myDilemmaAnswers[q.id] = choice;
-
-      // 선택지가 바뀌었을 때 기본 이유 칩이 없었다면 첫 번째 예시 이유를 기본값으로 제안하거나 초기화
-      const defaultReasons = choice === 'eco' ? (q.optB.reasons || []) : (q.optA.reasons || []);
-      if (prevChoice !== choice && (!myDilemmaReasons[q.id] || (prevChoice && ((prevChoice === 'eco' ? q.optB.reasons : q.optA.reasons) || []).includes(myDilemmaReasons[q.id])))) {
-        myDilemmaReasons[q.id] = defaultReasons[0] || '';
-      }
 
       // 버튼 시각 피드백
       const btnDev = document.getElementById('btnOptDev');
@@ -4655,10 +4432,8 @@
       // 저장
       try {
         localStorage.setItem('jeongnong_dilemma_my', JSON.stringify(myDilemmaAnswers));
-        localStorage.setItem('jeongnong_dilemma_reasons_my', JSON.stringify(myDilemmaReasons));
       } catch (e) { }
 
-      renderDilemmaReasonBox(q, choice);
       saveMyDilemmaRecord();
     }
 
@@ -4668,14 +4443,6 @@
       if (!myDilemmaAnswers[q.id]) {
         showToast('💡 먼저 두 입장 중 내 마음에 더 와닿는 쪽을 선택해 주세요!');
         return;
-      }
-
-      const inputEl = document.getElementById('dilemmaReasonInput');
-      if (inputEl && inputEl.value.trim()) {
-        myDilemmaReasons[q.id] = inputEl.value.trim();
-        try {
-          localStorage.setItem('jeongnong_dilemma_reasons_my', JSON.stringify(myDilemmaReasons));
-        } catch (e) { }
       }
 
       if (currentDilemmaIdx < activeDilemmaPool.length - 1) {
@@ -4701,17 +4468,11 @@
           const isEco = choice === 'eco';
           const choiceText = isEco ? q.optB.label : q.optA.label;
           const choiceIcon = isEco ? q.optB.icon : q.optA.icon;
-          const reasonText = myDilemmaReasons[q.id] || '선택한 입장의 가치를 중요하게 생각함';
           return `
-        <div class="dilemma-answer-item ${isEco ? 'eco' : 'dev'}" style="flex-direction:column; align-items:flex-start; gap:6px;">
-          <div style="display:flex; justify-content:space-between; width:100%; align-items:center; flex-wrap:wrap; gap:8px;">
-            <div class="dilemma-answer-title">${q.icon} 사례 ${i + 1}. ${escapeHtml(q.title)}</div>
-            <div class="dilemma-answer-choice ${isEco ? 'eco' : 'dev'}">
-              ${choiceIcon} ${escapeHtml(choiceText)}
-            </div>
-          </div>
-          <div style="font-size:0.85rem; color:#555; background:rgba(255,255,255,0.85); padding:6px 10px; border-radius:8px; width:100%;">
-            💬 <strong>나의 선택 이유:</strong> ${escapeHtml(reasonText)}
+        <div class="dilemma-answer-item ${isEco ? 'eco' : 'dev'}">
+          <div class="dilemma-answer-title">${q.icon} 사례 ${i + 1}. ${escapeHtml(q.title)}</div>
+          <div class="dilemma-answer-choice ${isEco ? 'eco' : 'dev'}">
+            ${choiceIcon} ${escapeHtml(choiceText)}
           </div>
         </div>
       `;
@@ -4724,7 +4485,7 @@
       if (rBox) rBox.classList.add('show');
 
       saveMyDilemmaRecord();
-      showToast('✅ 3가지 환경 딜레마 선택 완료! 우리 반의 결과와 두 관점을 확인해 보세요.');
+      showToast('✅ 5가지 환경 딜레마 선택 완료! 우리 반의 결과를 확인해 보세요.');
     }
 
     function saveMyDilemmaRecord() {
@@ -4738,7 +4499,6 @@
 
       const record = {
         answers: { ...myDilemmaAnswers },
-        reasons: { ...myDilemmaReasons },
         ecoScore: ecoCount,
         devScore: devCount,
         name: userName || '학생',
@@ -4778,9 +4538,9 @@
       if (dilemmaSelectedCase === 'all') {
         records.forEach(r => {
           if (r && r.answers) {
-            [1, 2, 3].forEach(cid => {
-              if (r.answers[cid] === 'eco') ecoCount++;
-              else if (r.answers[cid] === 'dev') devCount++;
+            coreDilemmaList.forEach(q => {
+              if (r.answers[q.id] === 'eco') ecoCount++;
+              else if (r.answers[q.id] === 'dev') devCount++;
             });
           } else if (r) {
             ecoCount += (r.ecoScore || 0);
@@ -4816,10 +4576,8 @@
       activeDilemmaPool = coreDilemmaList;
       currentDilemmaIdx = 0;
       myDilemmaAnswers = {};
-      myDilemmaReasons = {};
       try {
         localStorage.removeItem('jeongnong_dilemma_my');
-        localStorage.removeItem('jeongnong_dilemma_reasons_my');
       } catch (e) { }
       renderDilemmaQuestion(0);
       window.scrollTo({ top: document.getElementById('sec-dilemma').offsetTop - 60, behavior: 'smooth' });
@@ -5679,16 +5437,15 @@
       }
 
       const totalDilemma = Object.keys(data.dilemmaClassMap || {}).length;
-      const caseStats = {
-        1: { title: '① 전농로 벚꽃거리 도로 확장', eco: 0, dev: 0 },
-        2: { title: '② 곶자왈 관광단지 개발', eco: 0, dev: 0 },
-        3: { title: '③ 가로수 가지치기', eco: 0, dev: 0 }
-      };
+      const caseStats = {};
+      coreDilemmaList.forEach(q => {
+        caseStats[q.id] = { title: `${q.id}. ${q.title}`, eco: 0, dev: 0 };
+      });
       Object.values(data.dilemmaClassMap || {}).forEach(ans => {
         if (!ans || !ans.answers) return;
-        [1, 2, 3].forEach(cid => {
-          if (ans.answers[cid] === 'eco') caseStats[cid].eco++;
-          else if (ans.answers[cid] === 'dev') caseStats[cid].dev++;
+        coreDilemmaList.forEach(q => {
+          if (ans.answers[q.id] === 'eco') caseStats[q.id].eco++;
+          else if (ans.answers[q.id] === 'dev') caseStats[q.id].dev++;
         });
       });
 
@@ -5766,15 +5523,15 @@
   </div>
 
   <div class="section-box">
-    <h2>1. 활동 1 · 환경 딜레마 대표 사례 3선 선택 결과</h2>
-    <p>총 <strong>${totalDilemma}명</strong> 참여 (유형 판정 대신 사례별 선택 비율 및 선택 근거 탐색)</p>
+    <h2>1. 활동 1 · 환경 딜레마 5선 선택 결과</h2>
+    <p>총 <strong>${totalDilemma}명</strong> 참여 (사례별 선택 비율 탐색)</p>
     <table>
       <thead>
-        <tr><th>대표 사례</th><th>🌿 자연 보호 선택</th><th>🏙️ 인간의 편리함·안전 선택</th></tr>
+        <tr><th>환경 딜레마 사례</th><th>🌿 자연 보호 선택</th><th>🏙️ 인간의 편리함·안전 선택</th></tr>
       </thead>
       <tbody>
-        ${[1, 2, 3].map(cid => {
-          const st = caseStats[cid];
+        ${coreDilemmaList.map(q => {
+          const st = caseStats[q.id];
           const sum = st.eco + st.dev;
           const pE = sum ? Math.round((st.eco / sum) * 100) : 0;
           const pD = sum ? (100 - pE) : 0;
